@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row"> -->
                 <div class="col-sm-12 col-lg-6">
                     <div class="stats-widget">
                         <div class="stats-top">
