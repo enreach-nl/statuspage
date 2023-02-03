@@ -274,7 +274,7 @@ return [
     // Notifications
     'notifications' => [
         'notifications' => 'Notifications',
-        'awesome'       => 'Awesome.',
+        'awesome'       => 'OK.',
         'whoops'        => 'Whoops.',
     ],
 
