@@ -31,6 +31,9 @@
                     <div class="user col-sm-3 col-xs-6">
                         <div class="name">{{ $member->username }}</div>
                         <div class="email">{{ $member->email }}</div>
+                        @if($currentUser->username != 'tamarh')
+                            <div class="email">Not able to edit.</div>
+                        @endif
                     </div>
                 </a>
                 @endforeach
