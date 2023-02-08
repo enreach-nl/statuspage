@@ -3,7 +3,13 @@
 @section('bodyClass', 'login')
 
 @section('content')
-<div class="container">
+
+    @if (! in_array(request()->ip(), ['89.184.168.160', '81.28.84.45']))
+        {{ abort(403, 'Unauthorized IP address.') }}
+    @endif
+
+
+    <div class="container">
     <div class="row">
         <div class="form-bg">
             <div class="logo">
