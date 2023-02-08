@@ -13,23 +13,7 @@
             <div class="col-sm-12">
                 <h4>Cachet</h4>
 
-                <p>{!! trans('dashboard.settings.credits.license') !!}</p>
-
-                <hr>
-
-                <h4>{{ trans('dashboard.settings.credits.contributors') }}</h4>
-
-                <p>{{ trans('dashboard.settings.credits.thank-you', ['count' => count($contributors)]) }}</p>
-
-                <ul class="list-inline">
-                    @foreach($contributors as $contributor)
-                    <li>
-                        <a href="{{ $contributor['site'] }}" target="_blank">
-                            <img src="{{ $contributor['avatar'] }}" class="img-rounded img-responsive" title="{{ $contributor['name'] }}" data-toggle="tooltip" height="100" width="100">
-                        </a>
-                    </li>
-                    @endforeach
-                </ul>
+                <p>{!! trans('dashboard.settings.credits.license') !!} This version you are currently viewing has been severely edited.</p>
 
                 <hr>
             </div>
