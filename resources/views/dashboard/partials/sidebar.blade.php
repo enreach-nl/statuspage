@@ -19,7 +19,7 @@
                     <span>{{ trans('dashboard.dashboard') }}</span>
                 </a>
             </li>
-            @if($currentUser->username == 'tamarh')
+
             <li {!! set_active('dashboard/incidents*') !!}>
                 <a href="{{ cachet_route('dashboard.incidents') }}">
                     <i class="ion ion-ios-information-outline"></i>
@@ -27,6 +27,7 @@
                     <span class="label label-info">{{ $incidentCount }}</span>
                 </a>
             </li>
+            @if($currentUser->isAdmin)
             <li {!! set_active('dashboard/templates*') !!}>
                 <a href="{{ cachet_route('dashboard.templates') }}">
                     <i class="ion ion-ios-paper-outline"></i>
