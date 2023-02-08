@@ -1,6 +1,7 @@
 @extends('layout.dashboard')
 
 @section('content')
+    @if($currentUser->isAdmin)
 <div class="content-panel">
     @includeWhen(isset($subMenu), 'dashboard.partials.sub-sidebar')
     <div class="content-wrapper">
@@ -169,4 +170,5 @@
         </div>
     </div>
 </div>
+    @endif
 @stop
