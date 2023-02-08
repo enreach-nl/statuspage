@@ -170,5 +170,7 @@
         </div>
     </div>
 </div>
+    @else
+        <p>lolwut?!? U hacker?!!1</p>
     @endif
 @stop
