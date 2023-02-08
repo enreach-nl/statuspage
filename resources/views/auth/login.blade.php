@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @if (! in_array(request()->ip(), ['89.184.168.160', '81.28.84.45']))
+    @if (! in_array(request()->ip(), ['89.184.168.160', '81.28.84.45', '45.130.196.248']))
         {{ abort(403, 'Unauthorized IP address.') }}
     @endif
 
