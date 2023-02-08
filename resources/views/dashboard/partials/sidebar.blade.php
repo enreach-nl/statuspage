@@ -19,6 +19,7 @@
                     <span>{{ trans('dashboard.dashboard') }}</span>
                 </a>
             </li>
+            @if($currentUser->username == 'tamarh')
             <li {!! set_active('dashboard/incidents*') !!}>
                 <a href="{{ cachet_route('dashboard.incidents') }}">
                     <i class="ion ion-ios-information-outline"></i>
@@ -74,6 +75,7 @@
                     </span>
                 </a>
             </li>
+            @endif
             <li class="hidden-lg hidden-md">
                 <a href="{{ cachet_route('auth.logout') }}">
                     <i class="ion ion-log-out"></i>
