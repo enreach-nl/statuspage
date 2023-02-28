@@ -13,7 +13,7 @@
     <div class="row">
         <div class="form-bg">
             <div class="logo">
-                <img src="{{ asset('/img/cachet-logo@2x.png') }}" class="img-responsive">
+
             </div>
 
             <form method="POST" action="{{ cachet_route('auth.login', [], 'post') }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
