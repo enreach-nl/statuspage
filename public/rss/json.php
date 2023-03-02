@@ -38,6 +38,6 @@ foreach ($results as $item) {
     );
 }
 
-$json = json_encode($$groupedArray);
+$json = json_encode($groupedArray);
 
 echo $json;
