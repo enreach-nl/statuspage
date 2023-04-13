@@ -13,6 +13,8 @@
     <div class="row">
         <div class="col-sm-12">
         @include('partials.errors')
+            <p>This has been disabled.</p>
+            <!--
         <form name="SubscriberForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.subscribers.create', [], 'post') }}" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <fieldset>
@@ -29,7 +31,7 @@
                     <a class="btn btn-default" href="{{ cachet_route('dashboard.subscribers') }}">{{ trans('forms.cancel') }}</a>
                 </div>
             </div>
-        </form>
+        </form> -->
         </div>
     </div>
 </div>
