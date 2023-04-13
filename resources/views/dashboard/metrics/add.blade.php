@@ -14,6 +14,8 @@
     <div class="row">
         <div class="col-md-12">
             @include('partials.errors')
+            <p>This has been disabled.</p>
+            <!--
             <form class="form-vertical" name="MetricsForm" role="form" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
@@ -81,7 +83,7 @@
                         <a class="btn btn-default" href="{{ cachet_route('dashboard.metrics') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </div>
-            </form>
+            </form> -->
         </div>
     </div>
 </div>
