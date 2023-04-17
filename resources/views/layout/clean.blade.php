@@ -1,3 +1,9 @@
+<?
+if($currentUser != "bertr" && $currentUser != "tamarh") {
+echo "Error: Unauthorized user";
+exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

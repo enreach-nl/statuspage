@@ -16,7 +16,7 @@ $sql = $dbh->prepare("
     FROM components c
     LEFT JOIN component_groups cg ON c.group_id = cg.id
     WHERE c.enabled = 1 AND cg.visible = 1
-    ");
+");
 $sql->execute();
 $results = $sql->fetchAll();
 
