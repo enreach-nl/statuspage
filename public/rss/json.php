@@ -15,7 +15,7 @@ $sql = $dbh->prepare("
     END AS currentStatus
     FROM components c
     LEFT JOIN component_groups cg ON c.group_id = cg.id
-    WHERE c.enabled = 1 AND cg.visible = 1 AND c.deleted_at IS NOT NULL
+    WHERE c.enabled = 1 AND cg.visible = 1 AND c.deleted_at IS NULL
 ");
 $sql->execute();
 $results = $sql->fetchAll();
