@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <textarea class="form-control" rows="40">Please look at the logfile stores in /var/log/statuspage.log</textarea>
+                            <textarea class="form-control" rows="40">Please look at the logfile stored in /var/log/statuspage.log</textarea>
                         </div>
                     </div>
                 </div>
