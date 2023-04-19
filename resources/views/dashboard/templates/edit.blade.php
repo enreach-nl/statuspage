@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", function(e) {
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.templates.template') }}</label>
                             <textarea v-pre name="template[template]" id="cm-editor" class="form-control" rows="8" placeholder="{{ trans('forms.incidents.templates.template') }}">{{ $template->template }}</textarea>
-                            <span class="help-block">{!! trans('forms.incidents.templates.twig') !!}</span>
+                            <!-- <span class="help-block">{!! trans('forms.incidents.templates.twig') !!}</span> -->
                         </div>
                     </fieldset>
 

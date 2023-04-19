@@ -11,9 +11,9 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h4>Cachet</h4>
+                <h4>Enreach Status</h4>
 
-                <p>{!! trans('dashboard.settings.credits.license') !!} This version you are currently viewing has been severely edited.</p>
+                <p>Enreach Status Page. Much nice! Very wow!</p>
 
                 <hr>
             </div>

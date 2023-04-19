@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-xs-12">
                                 <div class="checkbox">
                                     <label>
@@ -76,7 +76,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="checkbox">
@@ -110,6 +110,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="checkbox">
@@ -120,7 +121,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="checkbox">
