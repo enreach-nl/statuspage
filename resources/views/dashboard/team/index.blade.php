@@ -10,9 +10,9 @@
     </span>
     @if($currentUser->isAdmin)
     <div class="button-group pull-right">
-        <a class="btn btn-sm btn-success" href="{{ cachet_route('dashboard.team.invite') }}">
+        <!-- <a class="btn btn-sm btn-success" href="{{ cachet_route('dashboard.team.invite') }}">
             {{ trans('dashboard.team.invite.title') }}
-        </a>
+        </a> -->
         <a class="btn btn-sm btn-success" href="{{ cachet_route('dashboard.team.create') }}">
             {{ trans('dashboard.team.add.title') }}
         </a>
