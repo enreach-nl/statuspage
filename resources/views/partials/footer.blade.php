@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <p><a href = "./rss">Status RSS Feed</a> || <a href="./rss/json.php">Status JSON</a></p>
+                <p><a href = "./rss">Status RSS Feed</a> || <a href="./rss/json.php">Status JSON</a> || <a href="../>rss/ical.php">ical Calendar</a></p>
             </div>
 
         </div>
