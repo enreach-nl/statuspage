@@ -56,7 +56,9 @@ $channel = $xmlDoc->createElement('channel');
 $rss->appendChild($channel);
 
 // Add the title and link to the channel element
-$title = $xmlDoc->createElement('title', $rssTitle);
+// $title = $xmlDoc->createElement('title', $rssTitle);
+$title = $xmlDoc->createElement('title', htmlspecialchars($service['service'], ENT_QUOTES, 'UTF-8'));
+
 $channel->appendChild($title);
 
 $link = $xmlDoc->createElement('link', $rssLink);
@@ -71,10 +73,14 @@ foreach ($groupedArray as $category => $services) {
         $title = $xmlDoc->createElement('title', $service['service']);
         $item->appendChild($title);
 
-        $description = $xmlDoc->createElement('description', $service['currentStatus']);
+        // $description = $xmlDoc->createElement('description', $service['currentStatus']);
+        $description = $xmlDoc->createElement('description', htmlspecialchars($service['currentStatus'], ENT_QUOTES, 'UTF-8'));
+
         $item->appendChild($description);
 
-        $categoryElement = $xmlDoc->createElement('category', $category);
+        // $categoryElement = $xmlDoc->createElement('category', $category);
+        $categoryElement = $xmlDoc->createElement('category', htmlspecialchars($category, ENT_QUOTES, 'UTF-8'));
+
         $item->appendChild($categoryElement);
     }
 }
