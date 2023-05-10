@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 // get the database connection details
 include ('/etc/statuspage_rss.conf');
