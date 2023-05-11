@@ -1,6 +1,18 @@
 <?php
 error_reporting(0);
 
+function generateV4UUID()
+{
+    return sprintf(
+        '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0x0fff) | 0x4000,
+        mt_rand(0, 0x3fff) | 0x8000,
+        mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
+    );
+}
+
 // get the database connection details
 include ('/etc/statuspage_rss.conf');
 
@@ -95,7 +107,8 @@ foreach ($groupedArray as $category => $services) {
         $item->appendChild($categoryElement);
 
         // Create a GUID for each item, using the service['id'] as a unique identifier (or any other unique value from your data)
-        $guid = $xmlDoc->createElement('guid', htmlspecialchars('https://'.$_SERVER['HTTP_HOST'].'/donotuse/' . $service['id'], ENT_QUOTES, 'UTF-8'));
+        $guidValue = generateV4UUID();
+        $guid = $xmlDoc->createElement('guid', htmlspecialchars('https://'.$_SERVER['HTTP_HOST'].'/donotuse/' . $guidValue, ENT_QUOTES, 'UTF-8'));
         $guid->setAttribute('isPermaLink', 'false');
         $item->appendChild($guid);
     }
