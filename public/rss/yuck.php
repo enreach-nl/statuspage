@@ -61,8 +61,13 @@ $rss->appendChild($channel);
 $title = $xmlDoc->createElement('title', $rssTitle);
 $description = $xmlDoc->createElement('description', $rssDescription);
 
+// Create lastBuildDate element with the current date and time
+$lastBuildDate = $xmlDoc->createElement('lastBuildDate', date(DATE_RFC822));
+
 $channel->appendChild($title);
 $channel->appendChild($description);
+$channel->appendChild($lastBuildDate);
+
 
 $link = $xmlDoc->createElement('link', $rssLink);
 $channel->appendChild($link);
