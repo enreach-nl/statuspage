@@ -93,6 +93,11 @@ foreach ($groupedArray as $category => $services) {
         $categoryElement = $xmlDoc->createElement('category', htmlspecialchars($category, ENT_QUOTES, 'UTF-8'));
 
         $item->appendChild($categoryElement);
+
+        // Create a GUID for each item, using the service['id'] as a unique identifier (or any other unique value from your data)
+        $guid = $xmlDoc->createElement('guid', htmlspecialchars('https://'.$_SERVER['HTTP_HOST'].'/donotuse/' . $service['id'], ENT_QUOTES, 'UTF-8'));
+        $guid->setAttribute('isPermaLink', 'false');
+        $item->appendChild($guid);
     }
 }
 
