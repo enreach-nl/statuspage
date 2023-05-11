@@ -58,7 +58,6 @@ $rss->appendChild($channel);
 
 // Add the title and link to the channel element
 $title = $xmlDoc->createElement('title', $rssTitle);
-// $title = $xmlDoc->createElement('title', htmlspecialchars($service['service'], ENT_QUOTES, 'UTF-8'));
 
 $channel->appendChild($title);
 
