@@ -41,7 +41,7 @@ foreach ($results as $item) {
 
 // Set the RSS feed title and link
 $rssTitle = "Enreach Service Status - Prio 1 Only";
-$rssLink = $_SERVER['HTTP_HOST'] . "/rss/yuck.php";
+$rssLink = "https://" . $_SERVER['HTTP_HOST'] . "/rss/yuck.php";
 
 // Create the XML document
 $xmlDoc = new DOMDocument('1.0', 'utf-8');
