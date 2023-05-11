@@ -41,7 +41,7 @@ foreach ($results as $item) {
 
 // Set the RSS feed title and link
 $rssTitle = "Enreach Service Status - Prio 1 Only";
-$rssLink = "https://" . $_SERVER['HTTP_HOST'] . "/rss/yuck.php";
+$rssLink = $_SERVER['HTTP_HOST'] . "/rss/yuck.php";
 
 // Create the XML document
 $xmlDoc = new DOMDocument('1.0', 'utf-8');
@@ -57,8 +57,8 @@ $channel = $xmlDoc->createElement('channel');
 $rss->appendChild($channel);
 
 // Add the title and link to the channel element
-// $title = $xmlDoc->createElement('title', $rssTitle);
-$title = $xmlDoc->createElement('title', htmlspecialchars($service['service'], ENT_QUOTES, 'UTF-8'));
+$title = $xmlDoc->createElement('title', $rssTitle);
+// $title = $xmlDoc->createElement('title', htmlspecialchars($service['service'], ENT_QUOTES, 'UTF-8'));
 
 $channel->appendChild($title);
 
