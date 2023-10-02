@@ -14,50 +14,50 @@ return [
     'components' => [
         'last_updated' => 'Última actualización :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Desconocido',
             1 => 'Operacional',
             2 => 'Problemas de rendimiento',
-            3 => 'Interrupción parcial',
-            4 => 'Interrupción mayor',
+            3 => 'Afectación menor',
+            4 => 'Afectación mayor',
         ],
         'group' => [
             'other' => 'Otros componentes',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
+        'select_all'   => 'Seleccionar todo',
+        'deselect_all' => 'Deseleccionar todo',
     ],
 
     // Incidents
     'incidents' => [
         'none'         => 'Ningún incidente reportado',
-        'past'         => 'Incidencias anteriores',
-        'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Maintenance',
+        'past'         => 'Incidencias en servicio',
+        'stickied'     => 'Incidentes destacados',
+        'scheduled'    => 'Mantenimiento',
         'scheduled_at' => ', programado para :timestamp',
-        'posted'       => 'Posted :timestamp by :username',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted'       => 'Publicado en :timestamp by :username',
+        'posted_at'    => 'Publicado en :timestamp',
         'status'       => [
             1 => 'Investigando',
-            2 => 'Identificado',
-            3 => 'Observando',
-            4 => 'Corregido',
+            2 => 'Identificada causa',
+            3 => 'Implementando solución',
+            4 => 'Servicio Restablecido',
         ],
     ],
 
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Próximamente',
+            1 => 'En curso',
+            2 => 'Completo',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1]Sistema operativo|[2,*]Todos los sistemas están operativos',
         'bad'   => '[0,1] El sistema está actualmente experimentando problemas|[2,Inf] Algunos sistemas están experimentando problemas',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'major' => '[0,1]El sistema está experimentando problemas graves|[2,*]Algunos sistemas están experimentando problemas graves',
     ],
 
     'api' => [
@@ -77,23 +77,23 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
-        'unsubscribe'         => 'Unsubscribe',
+        'subscribe'           => 'Suscríbete a los cambios de estado y actualizaciones de incidentes',
+        'unsubscribe'         => 'Cancelar suscripción',
         'button'              => 'Suscríbete',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Gestionar suscripción',
         'manage'              => [
             'notifications'       => 'Notificaciones',
             'notifications_for'   => 'Manage notifications for',
             'no_subscriptions'    => 'Actualmente estás suscrito a todas las actualizaciones.',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => 'Actualizar suscripción',
             'my_subscriptions'    => 'Actualmente estás suscrito a las siguientes actualizaciones.',
-            'manage_at_link'      => 'Manage your subscriptions at :link',
+            'manage_at_link'      => 'Gestione sus suscripciones en :link',
         ],
         'email' => [
-            'manage_subscription' => 'We\'ve sent you an email, please click the link to manage your subscription',
+            'manage_subscription' => 'Te hemos enviado un correo electrónico, haz clic en el enlace para gestionar tu suscripción',
             'subscribe'           => 'Suscríbete para recibir actualizaciones por correo electrónico.',
             'subscribed'          => 'Te has subscrito a las notificaciones por correo electrónico, por favor verifica tu correo electrónico para confirmar tu subscripción.',
-            'updated-subscribe'   => 'You\'ve succesfully updated your subscriptions.',
+            'updated-subscribe'   => 'YHas actualizado con éxito tus suscripciones.',
             'verified'            => 'Tu subscripción por correo electrónico ha sido confirmada. Gracias!',
             'manage'              => 'Administre su suscripción',
             'unsubscribe'         => 'Darse de baja de alertas.',
@@ -113,7 +113,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Hay disponible una versión de Cachet más nueva. Puedes aprender sobre cómo actualizarla <a href="https://docs.cachethq.io/docs/updating-cachet">aquí</a>!',
+        'update' => 'Hay disponible una nueva versión de Cachet. Puedes aprender sobre cómo actualizarla <a href="https://docs.cachethq.io/docs/updating-cachet">aquí</a>!',
     ],
 
     // Modal
