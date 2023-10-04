@@ -63,6 +63,7 @@ $xmlDoc->formatOutput = true;
 // Create the root element (rss)
 $rss = $xmlDoc->createElement('rss');
 $rss->setAttribute('version', '2.0');
+$rss->setAttribute('xmlns:atom', 'http://www.w3.org/2005/Atom');
 $xmlDoc->appendChild($rss);
 
 // Create the channel element and add it to the rss element
@@ -83,6 +84,12 @@ $channel->appendChild($title);
 $channel->appendChild($description);
 $channel->appendChild($lastBuildDate);
 
+// Some sites reported the RSS was invalid because the atom link to self was missing. I've added it.
+$atomLink = $xmlDoc->createElement('atom:link');
+$atomLink->setAttribute('href', $rssLink);
+$atomLink->setAttribute('rel', 'self');
+$atomLink->setAttribute('type', 'application/rss+xml');
+$channel->appendChild($atomLink);
 
 $link = $xmlDoc->createElement('link', $rssLink);
 $channel->appendChild($link);
