@@ -68,9 +68,9 @@ if (!function_exists('formatted_date')) {
      */
     function formatted_date($date)
     {
-        $dateFormat = Config::get('setting.date_format', 'jS F Y');
+        $dateFormat = Config::get('setting.date_format', 'l jS F Y');
 
-        return (new Date($date))->format($dateFormat);
+        return ucwords((new Date($date))->format($dateFormat));
     }
 }
 
