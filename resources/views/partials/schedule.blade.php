@@ -5,21 +5,21 @@
         </div>
         <div class="list-group">
             @foreach($scheduledMaintenance as $schedule)
-                @if(\Carbon\Carbon::now()->diffInDays($schedule->scheduled_date, false) < 14 && \Carbon\Carbon::now()->diffInDays($schedule->scheduled_date, false) >= 0)
+                @if(\Carbon\Carbon::now()->diffInDays($schedule->scheduled_at_iso, false) < 14 && \Carbon\Carbon::now()->diffInDays($schedule->scheduled_at_iso, false) >= 0)
                     <div class="list-group-item" id="scheduled-{{ $schedule->id }}">
-                    <strong>{{ $schedule->name }}</strong> <small class="date"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></small>
-                    <div class="pull-right"><a href="#scheduled-{{ $schedule->id }}"><i class="ion ion-link"></i></a></div>
-                    <div class="markdown-body">
-                        {!! $schedule->formatted_message !!}
+                        <strong>{{ $schedule->name }}</strong> <small class="date"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></small>
+                        <div class="pull-right"><a href="#scheduled-{{ $schedule->id }}"><i class="ion ion-link"></i></a></div>
+                        <div class="markdown-body">
+                            {!! $schedule->formatted_message !!}
+                        </div>
+                        @if($schedule->components->count() > 0)
+                            <hr>
+                            @foreach($schedule->components as $affectedComponent)
+                                <span class="label label-primary">{{ $affectedComponent->component->name }}</span>
+                            @endforeach
+                        @endif
                     </div>
-                    @if($schedule->components->count() > 0)
-                        <hr>
-                        @foreach($schedule->components as $affectedComponent)
-                        <span class="label label-primary">{{ $affectedComponent->component->name }}</span>
-                        @endforeach
                 @endif
-            </div>
-            @endif
             @endforeach
         </div>
     </div>
