@@ -75,7 +75,7 @@ class ScheduleController extends Controller
      */
     public function showAddSchedule()
     {
-        $incidentTemplates = IncidentTemplate::all();
+        $incidentTemplates = IncidentTemplate::orderBy('name')->get();
 
         return View::make('dashboard.maintenance.add')
             ->withPageTitle(trans('dashboard.schedule.add.title').' - '.trans('dashboard.dashboard'))

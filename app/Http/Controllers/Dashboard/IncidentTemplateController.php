@@ -72,7 +72,7 @@ class IncidentTemplateController extends Controller
     {
         return View::make('dashboard.templates.index')
             ->withPageTitle(trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'))
-            ->withIncidentTemplates(IncidentTemplate::all());
+            ->withIncidentTemplates(IncidentTemplate::orderBy('name')->get());
     }
 
     /**
