@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http;
 
 use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Admin;
+use CachetHQ\Cachet\Http\Middleware\AdminIpWhitelist;
 use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\CacheControl;
@@ -48,6 +49,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'admin'           => Admin::class,
+        'ipwhitelist'     => AdminIpWhitelist::class,
         'auth.api'        => ApiAuthentication::class,
         'auth.remoteuser' => RemoteUserAuthenticate::class,
         'auth'            => Authenticate::class,

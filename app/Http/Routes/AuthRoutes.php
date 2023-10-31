@@ -42,13 +42,13 @@ class AuthRoutes
         ], function (Registrar $router) {
             $router->get('login', [
                 'as'         => 'get:auth.login',
-                'middleware' => 'guest',
+                'middleware' => ['guest', 'ipwhitelist'],
                 'uses'       => 'AuthController@showLogin',
             ]);
 
             $router->post('login', [
                 'as'         => 'post:auth.login',
-                'middleware' => ['guest', 'throttle:10,10'],
+                'middleware' => ['guest', 'ipwhitelist', 'throttle:10,10'],
                 'uses'       => 'AuthController@postLogin',
             ]);
 

@@ -4,11 +4,6 @@
 
 @section('content')
 
-    @if (! in_array(request()->ip(), ['89.184.168.160', '80.30.0.185','81.28.84.45','2.139.172.129','185.157.63.0/24', '185.157.63.18','45.130.196.248']))
-        {{ abort(403, 'Unauthorized IP address.') }}
-    @endif
-
-
     <div class="container">
     <div class="row">
         <div class="form-bg">
