@@ -63,6 +63,21 @@ class StatusPageRoutes
                 'as'   => 'get:component_shield',
                 'uses' => 'StatusPageController@showComponentBadge',
             ]);
+
+            $router->get('feed/rss/status', [
+                'as'   => 'get:feed_rss_status',
+                'uses' => 'FeedController@statusRssFeed',
+            ]);
+
+            $router->get('feed/ical/maintenance', [
+                'as'   => 'get:feed_ical',
+                'uses' => 'FeedController@maintenanceIcal',
+            ]);
+
+            $router->get('feed/json/status', [
+                'as'   => 'get:feed_json_status',
+                'uses' => 'FeedController@statusJson',
+            ]);
         });
     }
 }

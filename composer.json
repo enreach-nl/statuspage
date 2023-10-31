@@ -33,6 +33,7 @@
         "ext-mbstring": "*",
         "ext-openssl": "*",
         "ext-xml": "*",
+        "ext-dom": "*",
         "alt-three/bus": "^4.1",
         "cachethq/badger": "^2.0",
         "cachethq/emoji": "^3.0",
