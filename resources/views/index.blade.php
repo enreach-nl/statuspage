@@ -2,6 +2,7 @@
 
 @section('content')
 @include('partials.modules.messages')
+@include('partials.modules.gtm')
 @include('partials.modules.status')
 @include('partials.about-app')
 @include('partials.modules.components')
