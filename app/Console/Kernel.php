@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Console\Commands\BeaconCommand;
 use CachetHQ\Cachet\Console\Commands\DemoMetricPointSeederCommand;
 use CachetHQ\Cachet\Console\Commands\DemoSeederCommand;
 use CachetHQ\Cachet\Console\Commands\InstallCommand;
+use CachetHQ\Cachet\Console\Commands\UpstreamImport;
 use CachetHQ\Cachet\Console\Commands\VersionCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -43,6 +44,7 @@ class Kernel extends ConsoleKernel
         DemoSeederCommand::class,
         InstallCommand::class,
         VersionCommand::class,
+        UpstreamImport::class
     ];
 
     /**
@@ -55,5 +57,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('cachet:beacon')->twiceDaily(0, 12);
+        $schedule->command('upstream:import')->everyMinute()->when(function () {
+            config('application.upstream.mapping') != '' &&
+            config('application.upstream.url') != '';
+        });
     }
 }

@@ -8,6 +8,11 @@ return [
     'feed' => [
         'rss_incidents' => env('APPLICATION_FEED_RSS_INCIDENTS', false),
         'rss_status' => env('APPLICATION_FEED_RSS_STATUS', true),
-    ]
+    ],
+
+    'upstream' => [
+        'url' => env('APPLICATION_UPSTREAM_URL'),
+        'mapping' => env('APPLICATION_UPSTREAM_MAPPING'),
+    ],
 
 ];
