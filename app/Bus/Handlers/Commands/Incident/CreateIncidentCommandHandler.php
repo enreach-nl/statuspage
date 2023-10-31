@@ -49,6 +49,8 @@ class CreateIncidentCommandHandler
      */
     protected $dates;
 
+    protected $twigConfig;
+
     /**
      * Create a new create incident command handler instance.
      *
@@ -61,6 +63,8 @@ class CreateIncidentCommandHandler
     {
         $this->auth = $auth;
         $this->dates = $dates;
+
+        $this->twigConfig = config('cachet.twig');
     }
 
     /**
@@ -131,6 +135,37 @@ class CreateIncidentCommandHandler
         return $incident;
     }
 
+    protected function sandboxedTwigTemplateData(string $templateData)
+    {
+        if (!$templateData) {
+            return '';
+        }
+
+        $policy = new \Twig\Sandbox\SecurityPolicy(
+            $this->twigConfig['tags'],
+            $this->twigConfig['filters'],
+            $this->twigConfig['methods'],
+            $this->twigConfig['props'],
+            $this->twigConfig['functions']
+        );
+
+        $sandbox = new \Twig\Extension\SandboxExtension($policy);
+
+        $templateBasicLoader = new Twig_Loader_Array([
+            'firstStageLoader' => $templateData,
+        ]);
+
+        $sandBoxBasicLoader = new Twig_Loader_Array([
+            'secondStageLoader' => '{% sandbox %}{% include "firstStageLoader" %} {% endsandbox %}',
+        ]);
+
+        $hardenedLoader = new \Twig\Loader\ChainLoader([$templateBasicLoader, $sandBoxBasicLoader]);
+        $twig = new Twig_Environment($hardenedLoader);
+        $twig->addExtension($sandbox);
+
+        return $twig;
+    }
+
     /**
      * Compiles an incident template into an incident message.
      *
@@ -141,8 +176,7 @@ class CreateIncidentCommandHandler
      */
     protected function parseTemplate(IncidentTemplate $template, CreateIncidentCommand $command)
     {
-        $env = new Twig_Environment(new Twig_Loader_Array([]));
-        $template = $env->createTemplate($template->template);
+        $template = $this->sandboxedTwigTemplateData($template->template);
 
         $vars = array_merge($command->template_vars, [
             'incident' => [
@@ -158,6 +192,6 @@ class CreateIncidentCommandHandler
             ],
         ]);
 
-        return $template->render($vars);
+        return $template->render('secondStageLoader', $vars);
     }
 }
