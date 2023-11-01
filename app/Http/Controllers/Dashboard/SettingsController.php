@@ -95,12 +95,6 @@ class SettingsController extends Controller
                 'icon'   => 'ion-document-text',
                 'active' => false,
             ],
-            'credits' => [
-                'title'  => trans('dashboard.settings.credits.credits'),
-                'url'    => cachet_route('dashboard.settings.credits'),
-                'icon'   => 'ion-ios-list',
-                'active' => false,
-            ],
             'mail' => [
                 'title'  => trans('dashboard.settings.mail.mail'),
                 'url'    => cachet_route('dashboard.settings.mail'),
