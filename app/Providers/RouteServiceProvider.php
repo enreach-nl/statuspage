@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Http\Middleware\Timezone;
 use CachetHQ\Cachet\Http\Middleware\VerifyCsrfToken;
 use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
 use CachetHQ\Cachet\Http\Routes\AuthRoutes;
+use CachetHQ\Cachet\Http\Routes\FeedRoutes;
 use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
 use CachetHQ\Cachet\Http\Routes\SetupRoutes;
 use CachetHQ\Cachet\Http\Routes\SignupRoutes;
@@ -60,6 +61,7 @@ class RouteServiceProvider extends ServiceProvider
         SignupRoutes::class,
         ApiSystemRoutes::class,
         ApiSetupRoutes::class,
+        FeedRoutes::class,
     ];
 
     /**

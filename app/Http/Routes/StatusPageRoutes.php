@@ -63,27 +63,6 @@ class StatusPageRoutes
                 'as'   => 'get:component_shield',
                 'uses' => 'StatusPageController@showComponentBadge',
             ]);
-
-            $router->get('rss', [ // ugly uri because of legacy
-                'as'   => 'get:feed_rss_status',
-                'uses' => 'FeedController@feedRssStatus',
-            ]);
-
-            $router->get('rss/ical.php', [ // ugly uri because of legacy
-                'as'   => 'get:feed_ical_maintenance',
-                'uses' => 'FeedController@feedIcalMaintenance',
-            ]);
-
-            $router->get('rss/json.php', [ // ugly uri because of legacy
-                'as'   => 'get:feed_json_status',
-                'uses' => 'FeedController@feedJsonStatus',
-            ]);
-
-            $router->get('feed/rss/incidents', [
-                'as'   => 'get:feed_rss_incidents',
-                'uses' => 'FeedController@feedRssIncidents',
-            ]);
-
         });
     }
 }
