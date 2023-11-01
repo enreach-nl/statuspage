@@ -17,9 +17,8 @@ class FeedController extends Controller
 {
     public function feedJsonStatus(Request $request): JsonResponse
     {
-        $groups = Cache::remember('feed_groups_for_incidents_json', 1, function () {
-            return ComponentGroup::where('visible', true)->with('components')->get();
-        });
+        // @todo add caching
+        $groups = ComponentGroup::where('visible', true)->with('components')->get();
 
         $response = [];
         foreach ($groups as $group) {
@@ -215,8 +214,8 @@ class FeedController extends Controller
 
             $item->appendChild(
                 $xmlDoc->createElement('description', htmlspecialchars(
-                    __('cachet.incidents.status.'.$incident->message), ENT_QUOTES, 'UTF-8')
-                )
+                    $incident->message, ENT_QUOTES, 'UTF-8'
+                ))
             );
 
             $item->appendChild(
@@ -227,9 +226,9 @@ class FeedController extends Controller
                 $xmlDoc->createElement('pubDate', $incident->occurred_at->toRfc7231String())
             );
 
-            $item->appendChild(
-                $xmlDoc->createElement('status:incident', __('cachet.incidents.status.'.$incident->status))
-            );
+//            $item->appendChild(
+//                $xmlDoc->createElement('status:incident', __('cachet.incidents.status.'.$incident->status))
+//            );
         }
 
         // Output the XML document as a string

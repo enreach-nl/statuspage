@@ -51,18 +51,19 @@ return [
         'single' => [
             'driver' => 'single',
             'path'   => storage_path('logs/laravel.log'),
-            'level'  => 'debug',
+            'level'  => env('LOG_LEVEL','error'),
         ],
 
         'daily' => [
             'driver' => 'daily',
             'path'   => storage_path('logs/laravel.log'),
-            'level'  => 'debug',
+            'level'  => env('LOG_LEVEL','error'),
             'days'   => 7,
         ],
 
         'flare' => [
             'driver' => 'flare',
+            'level'  => env('FLARE_LOG_LEVEL','error'),
         ],
 
         'slack' => [
